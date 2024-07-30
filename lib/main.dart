@@ -45,249 +45,51 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-// class _MyHomePageState extends State<MyHomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: ListView(
-//         padding: EdgeInsets.symmetric(
-//           horizontal: 20.0,
-//         ),
-//         scrollDirection: Axis.vertical,
-//         children: [
-//           Container(
-//             height: 200.0,
-//             width: 200.0,
-//             color: Colors.red,
-//           ),
-//           Container(
-//             height: 200.0,
-//             width: 200.0,
-//             color: Colors.blue,
-//           ),
-//           Container(
-//             height: 200.0,
-//             width: 200.0,
-//             color: Colors.yellow,
-//           ),
-//           Container(
-//             height: 200.0,
-//             width: 200.0,
-//             color: Colors.orange,
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: ListView(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20.0,
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          // First Child image
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                  'https://ygo-assets-websites-editorial-emea.yougov.net/original_images/GettyImages-451813251.jpg',
+                ),
+                fit: BoxFit.fitHeight,
+              ),
+            ),
           ),
-          children: [
-            //  TEXTFIELD
-            TextField(
-              decoration: InputDecoration(
-                fillColor: Colors.grey.withOpacity(0.5),
-                filled: true,
-                prefixIcon: Icon(Icons.search_outlined),
-                suffixIcon: Icon(Icons.mic),
-                hintText: 'Search',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                  borderSide: BorderSide.none,
+
+          // Second Container Color
+          Container(
+            color: Colors.blue.withOpacity(0.7),
+          ),
+
+          // Third Child Text and Logo
+          const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.facebook_outlined,
+                color: Colors.white,
+                size: 48.0,
+              ),
+              Text(
+                'ARC Flutter Class',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 28.0,
                 ),
               ),
-            ),
-
-            // SIZEDBOX
-            const SizedBox(
-              height: 20.0,
-            ),
-
-            // CONTAINER
-            Container(
-              height: 200.0,
-              // color: Colors.yellow,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
-                color: Colors.red,
-                image: const DecorationImage(
-                  image: NetworkImage(
-                      'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-
-            // SIZEDBOX
-            const SizedBox(
-              height: 20.0,
-            ),
-
-            // TEXT
-            const Text(
-              'Stories',
-              style: TextStyle(
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            // HORIZONTAL LISTVIEW
-            Container(
-              height: 200.0,
-              // color: Colors.pink,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  // CONTAINER
-                  Container(
-                    height: 200.0,
-                    width: 150.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.red,
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                            'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  // SIZEDBOX
-                  const SizedBox(
-                    width: 20.0,
-                  ),
-                  Container(
-                    height: 200.0,
-                    width: 150.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.red,
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                            'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  // SIZEDBOX
-                  const SizedBox(
-                    width: 20.0,
-                  ),
-                  Container(
-                    height: 200.0,
-                    width: 150.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.red,
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                            'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  // SIZEDBOX
-                  const SizedBox(
-                    width: 20.0,
-                  ),
-                  Container(
-                    height: 200.0,
-                    width: 150.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.red,
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                            'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            //CONTAINER FOR LISTVIEW ENDS HERE
-            // SIZEDBOX
-            const SizedBox(
-              height: 20.0,
-            ),
-
-            // TEXT
-            const Text(
-              'New Arrivals',
-              style: TextStyle(
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            // SIZEDBOX
-            const SizedBox(
-              height: 20.0,
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  height: 200.0,
-                  width: 150.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.red,
-                    image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 200.0,
-                  width: 150.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20.0),
-                    color: Colors.red,
-                    image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                // Container(
-                //   height: 200.0,
-                //   width: 150.0,
-                //   decoration: BoxDecoration(
-                //     borderRadius: BorderRadius.circular(20.0),
-                //     color: Colors.red,
-                //     image: const DecorationImage(
-                //       image: NetworkImage(
-                //           'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                //       fit: BoxFit.cover,
-                //     ),
-                //   ),
-                // ),
-              ],
-            ),
-
-            // SIZEDBOX
-            const SizedBox(
-              height: 20.0,
-            ),
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }
