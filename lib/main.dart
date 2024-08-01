@@ -45,42 +45,6 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-// class _MyHomePageState extends State<MyHomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: ListView(
-//         padding: EdgeInsets.symmetric(
-//           horizontal: 20.0,
-//         ),
-//         scrollDirection: Axis.vertical,
-//         children: [
-//           Container(
-//             height: 200.0,
-//             width: 200.0,
-//             color: Colors.red,
-//           ),
-//           Container(
-//             height: 200.0,
-//             width: 200.0,
-//             color: Colors.blue,
-//           ),
-//           Container(
-//             height: 200.0,
-//             width: 200.0,
-//             color: Colors.yellow,
-//           ),
-//           Container(
-//             height: 200.0,
-//             width: 200.0,
-//             color: Colors.orange,
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -112,19 +76,42 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 20.0,
             ),
 
-            // CONTAINER
-            Container(
-              height: 200.0,
-              // color: Colors.yellow,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
-                color: Colors.red,
-                image: const DecorationImage(
-                  image: NetworkImage(
-                      'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                  fit: BoxFit.cover,
+            // STACK
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  height: 200.0,
+                  // color: Colors.yellow,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.red,
+                    image: const DecorationImage(
+                      image: NetworkImage(
+                          'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
-              ),
+
+                // Second Child
+                Container(
+                  height: 200.0,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20.0),
+                    color: Colors.black.withOpacity(0.5),
+                  ),
+                ),
+
+                // Last Child
+                const Text(
+                  'The best book about self love',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  ),
+                ),
+              ],
             ),
 
             // SIZEDBOX
@@ -148,20 +135,50 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
-                  // CONTAINER
-                  Container(
-                    height: 200.0,
-                    width: 150.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      color: Colors.red,
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                            'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
-                        fit: BoxFit.cover,
+                  //STACK
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      // First child
+                      Container(
+                        height: 200.0,
+                        width: 150.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.red,
+                          image: const DecorationImage(
+                            image: NetworkImage(
+                                'https://images.pexels.com/photos/6041293/pexels-photo-6041293.jpeg?cs=srgb&dl=pexels-cottonbro-6041293.jpg&fm=jpg'),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
+
+                      // Second Child
+                      Container(
+                        height: 200.0,
+                        width: 150.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.purple.withOpacity(0.5),
+                        ),
+                      ),
+
+                      // Third Child
+                      const SizedBox(
+                        width: 100.0,
+                        child: Text(
+                          'Best Book for Autumn Reading',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
+
                   // SIZEDBOX
                   const SizedBox(
                     width: 20.0,
