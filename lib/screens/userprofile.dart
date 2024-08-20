@@ -13,7 +13,11 @@ class _UserProfileState extends State<UserProfile> {
     return const Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Text('User profile Page'),
+        child: CircleAvatar(
+          backgroundColor: Colors.blue,
+          radius: 30.0,
+          child: Text('HD'),
+        ),
       ),
     );
   }

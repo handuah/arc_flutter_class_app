@@ -24,15 +24,22 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           children: [
             //  TEXTFIELD
-            TextField(
+            const TextField(
               decoration: InputDecoration(
-                fillColor: Colors.grey.withOpacity(0.5),
+                fillColor: Colors.blue,
                 filled: true,
-                prefixIcon: Icon(Icons.search_outlined),
-                suffixIcon: Icon(Icons.mic),
+                prefixIcon: Icon(
+                  Icons.search_outlined,
+                  color: Colors.white,
+                ),
+                suffixIcon: Icon(
+                  Icons.mic,
+                  color: Colors.white,
+                ),
                 hintText: 'Search',
+                hintStyle: TextStyle(color: Colors.white),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
+                  // borderRadius: BorderRadius.circular(20.0),
                   borderSide: BorderSide.none,
                 ),
               ),
